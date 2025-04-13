@@ -1,26 +1,38 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --selection-bg: #404040;
+  --selection-fg: var(--background);
+  --input-selection: #404040;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html.dark {
+  --background: #1a1a1a;
+  --foreground: #ededed;
+  --selection-bg: #ffffff;
+  --selection-fg: var(--background);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  
+  font-family: var(--font-jetbrains-mono), 'Consolas', Arial, Helvetica, sans-serif;
+
+  ::selection {
+    background: var(--selection-bg);
+    color: var(--selection-fg);
+  }
+}
+
+a {
+  font-family: var(--font-geist-sans);
+}
+
+h1 {
+  font-family: var(--font-geist-sans);
 }
