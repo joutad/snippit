@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# snippit
 
-## Getting Started
+snippit is a developer-focused documentation assistant that helps you understand programming languages, frameworks, and libraries through clear summaries and direct links to trusted sources. Powered by the [Exa API](https://exa.ai), it delivers multiple relevant answers in a clean, focused interface, saving you time by cutting through long, overwhelming documentation pages.
 
-First, run the development server:
+![Screenshot 2025-04-12 203300](https://github.com/user-attachments/assets/2c376cbe-a155-4c1f-ace5-39614f48f0cb)
+
+*returns beginner-friendly explanations and official documentation links.*
+
+## Features
+
+- Natural-language search for docs (e.g. *"how do I use a custom colour in Tailwind?"*)
+- Summaries help to find the right piece of documentation
+- Toggleable markdown previews from official docs (+ their link)
+- Light/dark/auto theme support
+- Built with Next.js, TypeScript, and Tailwind CSS
+
+## Tech Stack
+
+- **Framework**: Next.js
+- **Styling**: Tailwind CSS + Tailwind Typography
+- **Markdown Rendering**: react-markdown + remark-gfm
+- **Docs Search**: [Exa API](https://exa.ai)
+- **Language**: TypeScript
+
+## Project Structure (WIP)
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+src/
+  ├── app/
+  │   ├── page.tsx        # Main UI (search + results)
+  │   └── api/
+  │       └── search/     # API route calling Exa search
+  ├── components/
+  └── styles/
+      └── globals.css
